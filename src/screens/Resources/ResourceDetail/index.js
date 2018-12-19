@@ -10,7 +10,8 @@ import {
 import Styles from "./styles";
 import Text from "@text";
 import Button from "@button";
-import { Images } from "@theme";
+import HTML from 'react-native-render-html';
+import {htmlStyles,htmlRenderers, Images } from "@theme";
 import { getResources } from "@api";
 var BASE_URL = "https://pca.techequipt.com.au";
 
@@ -55,16 +56,23 @@ export default class ResourceDetail extends Component {
           </View>
 
           <View style={[Styles.itemView]}>
-            {this.state.image ? (
+            {this.state.image && (
               <Image
                 style={[Styles.middleimage]}
                 resizeMode="contain"
                 source={{ uri: this.state.image }}
               />
-            ) : null}
-            <Text smallMedium style={Styles.subtitle}>
-              {this.state.subtitle}
-            </Text>
+            )}
+            <HTML 
+              html={this.state.subtitle} 
+              // renderers = {htmlRenderers}
+              tagsStyles={htmlStyles} 
+              onLinkPress={(e, url) => {
+                Linking.openURL(url).catch((err) =>
+                  console.error('An error occurred', err) 
+                )
+              }}
+            />
           </View>
         </ScrollView>
         <View style={Styles.buttonBar}>
