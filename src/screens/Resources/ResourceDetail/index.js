@@ -13,6 +13,8 @@ import Button from "@button";
 import HTML from 'react-native-render-html';
 import {htmlStyles,htmlRenderers, Images } from "@theme";
 import { getResources } from "@api";
+import { fixSpaceInHTML } from '@utils';
+
 var BASE_URL = "https://pca.techequipt.com.au";
 
 export default class ResourceDetail extends Component {
@@ -64,7 +66,7 @@ export default class ResourceDetail extends Component {
               />
             )}
             <HTML 
-              html={this.state.subtitle} 
+              html={fixSpaceInHTML(this.state.subtitle)} 
               // renderers = {htmlRenderers}
               tagsStyles={htmlStyles} 
               onLinkPress={(e, url) => {

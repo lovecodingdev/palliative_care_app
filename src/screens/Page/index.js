@@ -9,6 +9,7 @@ import HTML from 'react-native-render-html';
 import { API_HTML_ROOT } from '@api';
 import store from '../../Store';
 import { gotoHome } from 'router';
+import { fixSpaceInHTML } from '@utils';
 
 let { width } = Dimensions.get('window');
 
@@ -59,7 +60,7 @@ export default class Page extends Component {
 							</View>
 						) : null}
 						<HTML 
-							html={this.state.pageContent.body} 
+							html={fixSpaceInHTML(this.state.pageContent.body)} 
 							tagsStyles={htmlStyles} 
 							onLinkPress={(e, url) => {
 								Linking.openURL(url).catch((err) =>

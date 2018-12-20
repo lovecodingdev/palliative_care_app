@@ -40,3 +40,17 @@ export function playSounds(urls) {
     }
     nextSound()
 }
+
+export function fixSpaceInHTML(html){
+    let tagWithSpaceMatch = /<([^>]+)>\s+<([^>]+)>/.exec(html);
+    if(tagWithSpaceMatch){
+        let tagWithSpace = tagWithSpaceMatch[0];
+        let newTagWithSpace = tagWithSpace.replace(/\s/g, '') + " ";
+        let newHtml = html.replace(tagWithSpace, newTagWithSpace);
+        console.log({newHtml});
+        return fixSpaceInHTML(newHtml);
+    }else{
+        console.log({html});
+        return html;
+    }
+}

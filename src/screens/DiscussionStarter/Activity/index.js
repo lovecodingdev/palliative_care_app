@@ -9,6 +9,7 @@ import { Button, Text, ProgressBar, Choices, ManyChoices, Loader } from '@compon
 import { playSounds } from '@utils';
 import { Card } from '@components';
 import { deviceWidth } from '@ResponsiveDimensions';
+import { fixSpaceInHTML } from '@utils';
 import HTML from 'react-native-render-html';
 
 export default class Activity extends Component {
@@ -139,7 +140,7 @@ export default class Activity extends Component {
 			return (
 				<View style={Styles.questionItem} key={index}>
 					<View style={Styles.questionTitle}>
-						<HTML html={question} containerStyle={Styles.questionContainer} tagsStyles={htmlStyles} />
+						<HTML html={fixSpaceInHTML(question)} containerStyle={Styles.questionContainer} tagsStyles={htmlStyles} />
 						<TouchableOpacity
 							onPress={() => this.playAudios(question_audio_url, question_choices_audio_urls)}
 						>
