@@ -58,7 +58,15 @@ export default class Page extends Component {
 								/>
 							</View>
 						) : null}
-						<HTML html={this.state.pageContent.body} tagsStyles={htmlStyles} />
+						<HTML 
+							html={this.state.pageContent.body} 
+							tagsStyles={htmlStyles} 
+							onLinkPress={(e, url) => {
+								Linking.openURL(url).catch((err) =>
+									console.error('An error occurred', err) 
+								)
+							}}
+						/>
 					</View>
 				</ScrollView>
 				<View style={Styles.buttonBar}>
