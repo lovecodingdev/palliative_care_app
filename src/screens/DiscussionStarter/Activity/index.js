@@ -154,7 +154,7 @@ export default class Activity extends Component {
 							value={answerData ? answerData : ''}
 							multiline={true}
 							numberOfLines={4}
-							onChangeText={(text) => this.onChangedAnswer(questionIndex, text)}
+							onBlur={(e) => this.onChangedAnswer(questionIndex, e.nativeEvent.text)}
 						/>
 					) : question_type == 'choices' ? (
 						<Choices
@@ -194,7 +194,7 @@ export default class Activity extends Component {
 									value={otherData ? otherData : ''}
 									multiline={true}
 									numberOfLines={4}
-									onChangeText={(text) => this.onChangedAnswer(questionIndex, text, 'other')}
+									onBlur={(e) => this.onChangedAnswer(questionIndex, e.nativeEvent.text, 'other')}
 								/>
 							</View>
 						</View>
@@ -218,7 +218,7 @@ export default class Activity extends Component {
 									value={otherData ? otherData : ''}
 									multiline={true}
 									numberOfLines={4}
-									onChangeText={(text) => this.onChangedAnswer(questionIndex, text, 'other')}
+									onBlur={(e) => this.onChangedAnswer(questionIndex, e.nativeEvent.text, 'other')}
 								/>
 							</View>
 						</View>
