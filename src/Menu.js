@@ -8,6 +8,7 @@ import { NavigationActions } from 'react-navigation';
 import store from './Store';
 import { ArrowText } from '@components';
 import { MediaQueryStyleSheet } from 'react-native-responsive';
+import {checkAndGo} from './Router';
 let { width, height } = Dimensions.get('window');
 const initialOrientation = width > height ? 'LANDSCAPE' : 'PORTRAIT';
 
@@ -41,27 +42,9 @@ export default class Menu extends Component {
 			}, 500);
 		};
 
-		if (CHECK_ROUTES.includes(store.activeRoute)) {
-			setTimeout(() => {
-				const { navigate, goBack } = this.props.navigation;
-				Alert.alert(
-					'Are you sure?',
-					'Any information you have entered will be deleted.',
-					[
-						{ text: 'NO', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
-						{
-							text: 'YES',
-							onPress: () => {
-								goToRoute(routeName, pageName);
-							}
-						}
-					],
-					{ cancelable: false }
-				);
-			}, 500);
-		} else {
+		checkAndGo(()=>{
 			goToRoute(routeName, pageName);
-		}
+		});
 	}
 
 	async componentDidMount() {
@@ -74,12 +57,14 @@ export default class Menu extends Component {
 	}
 
 	goBackToOnboarding() {
-		const resetAction = NavigationActions.reset({
-			index: 0,
-			key: null,
-			actions: [ NavigationActions.navigate({ routeName: 'OnBoardingScreen' }) ]
+		checkAndGo(()=>{
+			const resetAction = NavigationActions.reset({
+				index: 0,
+				key: null,
+				actions: [ NavigationActions.navigate({ routeName: 'OnBoardingScreen' }) ]
+			});
+			this.props.navigation.dispatch(resetAction);
 		});
-		this.props.navigation.dispatch(resetAction);
 	}
 
 	render() {
