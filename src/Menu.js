@@ -93,48 +93,48 @@ export default class Menu extends Component {
 				</View>
 				<View style={styles.menu}>
 					<TouchableOpacity style={styles.menuItem} onPress={() => this.goto('Page', 'about_this_app')}>
-						<ArrowText light bold color={Colors.white} style={styles.menuItemText}>
+						<Text light bold color={Colors.white} style={styles.menuItemText}>
 							About this app
-						</ArrowText>
+						</Text>
 					</TouchableOpacity>
 					<TouchableOpacity style={styles.menuItem} onPress={() => this.goBackToOnboarding()}>
-						<ArrowText light bold color={Colors.white} style={styles.menuItemText}>
+						<Text light bold color={Colors.white} style={styles.menuItemText}>
 							Welcome slides
-						</ArrowText>
+						</Text>
 					</TouchableOpacity>
 					<TouchableOpacity style={styles.menuItem} onPress={() => this.goto('DiscussionStarter')}>
-						<ArrowText light bold color={Colors.white} style={styles.menuItemText}>
+						<Text light bold color={Colors.white} style={styles.menuItemText}>
 							Use discussion starter
-						</ArrowText>
+						</Text>
 					</TouchableOpacity>
-					<TouchableOpacity style={styles.menuItem} onPress={() => this.goto('CardGame')}>
+					{/* <TouchableOpacity style={styles.menuItem} onPress={() => this.goto('CardGame')}>
 						<ArrowText light bold color={Colors.white} style={styles.menuItemText}>
 							Start discussion cards
 						</ArrowText>
-					</TouchableOpacity>
+					</TouchableOpacity> */}
 					<TouchableOpacity style={styles.menuItem} onPress={() => this.goto('UserGuides')}>
-						<ArrowText light bold color={Colors.white} style={styles.menuItemText}>
+						<Text light bold color={Colors.white} style={styles.menuItemText}>
 							App instructions
-						</ArrowText>
+						</Text>
 					</TouchableOpacity>
 					<TouchableOpacity style={styles.menuItem} onPress={() => this.goto('Resources')}>
-						<ArrowText light bold color={Colors.white} style={styles.menuItemText}>
+						<Text light bold color={Colors.white} style={styles.menuItemText}>
 							Resource library
-						</ArrowText>
+						</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
 						style={styles.menuItem}
 						onPress={() => this.goto('Page', 'looking_after_yourself')}
 					>
-						<ArrowText light bold color={Colors.white} style={styles.menuItemText}>
+						<Text light bold color={Colors.white} style={styles.menuItemText}>
 							Looking after yourself
-						</ArrowText>
+						</Text>
 					</TouchableOpacity>
-					<TouchableOpacity style={styles.menuItem}>
+					{/* <TouchableOpacity style={styles.menuItem}>
 						<ArrowText light bold color={Colors.white} style={styles.menuItemText}>
 							Take our survey
 						</ArrowText>
-					</TouchableOpacity>
+					</TouchableOpacity> */}
 				</View>
 				<Image source={Images.logo_footer} resizeMode={'contain'} style={styles.logo_pca} />
 				<Image source={Images.flying_doctor_logo} resizeMode={'contain'} style={styles.logo_rfds} />

@@ -60,31 +60,31 @@ export default class Complete extends Component {
 		await postDiscussionAnswers(this.state.discussionStarter);
 		this.setState({ loaderVisible: false });
 
-    setTimeout(() => {
-      const { navigate, goBack } = this.props.navigation;
-      Alert.alert(
-        "Are you sure?",
-        "Any information you have entered will be deleted.",
-        [
-          {
-            text: "NO",
-            onPress: () => console.log("Cancel Pressed"),
-            style: "cancel"
-          },
-          {
-            text: "YES",
-            onPress: () => {
-              // goBack(store.routesInStack[0]);
-              gotoHome();
-              store.activeRoute = null;
-              store.routesInStack = [];
-            }
-          }
-        ],
-        { cancelable: false }
-      );
-    }, 500);
-  }
+		setTimeout(() => {
+			const { navigate, goBack } = this.props.navigation;
+			Alert.alert(
+				"Are you sure?",
+				"Any information you have entered will be deleted.",
+				[
+					{
+						text: "NO",
+						onPress: () => console.log("Cancel Pressed"),
+						style: "cancel"
+					},
+					{
+						text: "YES",
+						onPress: () => {
+							// goBack(store.routesInStack[0]);
+							gotoHome();
+							store.activeRoute = null;
+							store.routesInStack = [];
+						}
+					}
+				],
+				{ cancelable: false }
+			);
+		}, 500);
+	}
 
 	async onShareEmail() {
 		var html = getSharingHTMLFromResult(this.state.discussionStarter);
@@ -218,24 +218,32 @@ export default class Complete extends Component {
 									>
 										Export
 									</Button>
-									<Button
+									{/* <Button
 										dark
 										bold
 										buttonStyles={{ paddingHorizontal: 32 }}
 										onPress={this.onShareEmail.bind(this)}
 									>
 										Email
+									</Button> */}
+									<Button 
+										light 
+										bold 
+										buttonStyles={{ paddingHorizontal: 32 }}
+										onPress={this.onExit.bind(this)}
+									>
+										Exit
 									</Button>
 								</View>
 							</View>
 						)}
 					/>
 				</ScrollView>
-				<View style={Styles.buttonBar}>
+				{/* <View style={Styles.buttonBar}>
 					<Button light bold onPress={this.onExit.bind(this)}>
 						Exit
 					</Button>
-				</View>
+				</View> */}
 				<InfoAlert
 					visible={this.state.modalVisible.exported}
 					icon={Images.check}
