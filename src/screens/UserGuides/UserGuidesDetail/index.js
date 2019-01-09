@@ -158,7 +158,7 @@ export default class UserGuidesDetail extends Component {
 
     _share(){
         Share.share({
-            message : 'Dying To Talk',
+            message : 'Talking in the Bush',
             url : 'http://www.godeckyourself.com'
         }).then(this._showResult.bind(this));
     }

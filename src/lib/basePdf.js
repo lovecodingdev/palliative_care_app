@@ -9,7 +9,7 @@ import { Colors, Images } from '@theme';
 export const header = `
   <div class='header'>
     <div class='header-title'>
-      <h1>Dying to Talk in the Bush Study</h1>
+      <h1>Talking in the Bush Study</h1>
     </div>
     <div class='header-logo'><img src=${Images.base64_dtt_logo} alt='' /></div>
   </div>

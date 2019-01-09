@@ -181,7 +181,7 @@ export default class UserGuidesDetail extends Component {
 
     _share(){
         Share.share({
-            message : 'Dying To Talk',
+            message : 'Talking in the Bush',
             url : this.state.website
         }).then(this._showResult.bind(this));
     }

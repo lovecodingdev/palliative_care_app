@@ -526,11 +526,11 @@ class Swiper extends Component {
 					<ScrollView contentContainerStyle={Styles.scrollcontainer} style={{ backgroundColor: '#0009' }}>
 						{/* Render screens */}
 						<Text bold large style={Styles.titleText}>
-							Dying to Talk in the Bush
+							Talking in the Bush
 						</Text>
 						<View style={Styles.subTitleView}>
 							<Text bold medium style={Styles.subTitleText}>
-								Working out what's right for you
+								Working out what is right for you at the end of your life
 							</Text>
 							{/* <Text bold medium style={Styles.subTitleText}>dyingtotalk.org.au</Text> */}
 						</View>

@@ -23,6 +23,7 @@ import { GetHelpList, GetHelpDetail, LookingAfterYourself } from './screens/GetH
 import Page from './screens/Page';
 import { deviceWidth, deviceHeight } from './components/ResponsiveDimensions';
 import store from './Store';
+import { MediaQuery } from "react-native-responsive";
 
 var drawerNavigator = null;
 
@@ -81,7 +82,7 @@ const HeaderTitle = () => {
 				zIndex: -1
 			}}
 		>
-			Dying to Talk{deviceWidth(100) < 768 ? '\n' : ' '}in the Bush
+			Talking in the Bush
 		</Text>
 	);
 };
@@ -93,50 +94,39 @@ const Footer = (props) => {
 				height: deviceHeight(5),
 				flexDirection: 'row',
 				alignItems: 'center',
-				justifyContent: 'space-between',
+				justifyContent: 'center',
 				paddingHorizontal: deviceWidth(2),
 				backgroundColor: Colors.Navy,
 				overflow: 'hidden'
 			}}
 		>
-			<View
-				style={{
-					width: deviceHeight(7),
-					height: deviceHeight(7),
-					borderRadius: deviceHeight(3.5),
-					backgroundColor: '#fff',
-					alignItems: 'center',
-					justifyContent: 'center'
-				}}
-			>
-				<Image
-					source={Images.dtt_blue}
-					style={{ width: deviceHeight(6), height: deviceHeight(5), resizeMode: 'contain' }}
-				/>
-			</View>
-			<TouchableOpacity
-				style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: deviceWidth(1) }}
-				onPress={() => {
-					let routeName = 'Page';
-					let pageName = 'privacy_policy';
-					const key = `${routeName} ${store.routesInStack.length}`;
-					store.activeRoute = routeName;
-					store.activePage = pageName;
-					store.routesInStack.push(key);
-					props.navigation.navigate(
-						routeName,
-						{
-							pageName: pageName
-						},
-						null,
-						key
-					);
-				}}
-			>
-				<Text light right small>
-					Read PCA’s Privacy Statement here
-				</Text>
-			</TouchableOpacity>
+	        <Text light>© Palliative Care Australia 2019 </Text>
+			<MediaQuery minDeviceWidth={768}>
+				<View style={{ flex: 1 }} />
+				<TouchableOpacity
+					style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: deviceWidth(1) }}
+					onPress={() => {
+						let routeName = 'Page';
+						let pageName = 'privacy_policy';
+						const key = `${routeName} ${store.routesInStack.length}`;
+						store.activeRoute = routeName;
+						store.activePage = pageName;
+						store.routesInStack.push(key);
+						props.navigation.navigate(
+							routeName,
+							{
+								pageName: pageName
+							},
+							null,
+							key
+						);
+					}}
+				>
+					<Text light right small>
+						Read PCA’s Privacy Statement here
+					</Text>
+				</TouchableOpacity>
+			</MediaQuery>
 		</View>
 	);
 };

@@ -32,13 +32,13 @@ export default class Splash extends Component {
           contentContainerStyle={Styles.scrollView}
           style={{ backgroundColor: "#0009" }}
         >
-          <View style={Styles.circle_above}>
+          {/* <View style={Styles.circle_above}>
             <Image source={Images.dtt_blue} style={Styles.pca_logo} />
-          </View>
+          </View> */}
           <View style={Styles.center_view}>
-            <Text style={Styles.app_name}>Dying to Talk in the Bush</Text>
+            <Text style={Styles.app_name}>Talking in the Bush</Text>
             <Text style={Styles.text_desc}>
-              Working out what's right for you
+              Working out what is right for you at the end of your life
             </Text>
             {/* <Text style={Styles.text_website}>dyingtotalk.org.au</Text> */}
           </View>
