@@ -123,7 +123,7 @@ const Footer = (props) => {
 					}}
 				>
 					<Text light right small>
-						Read PCA’s Privacy Statement here
+						Read PCA’s Privacy Collection Statement here
 					</Text>
 				</TouchableOpacity>
 			</MediaQuery>

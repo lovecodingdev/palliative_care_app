@@ -114,7 +114,7 @@ export default class Menu extends Component {
 					</TouchableOpacity> */}
 					<TouchableOpacity style={styles.menuItem} onPress={() => this.goto('UserGuides')}>
 						<Text light bold color={Colors.white} style={styles.menuItemText}>
-							App instructions
+							Using this app
 						</Text>
 					</TouchableOpacity>
 					<TouchableOpacity style={styles.menuItem} onPress={() => this.goto('Resources')}>

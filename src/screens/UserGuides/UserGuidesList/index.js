@@ -264,7 +264,7 @@ export default class UserGuidesList extends Component {
 					<Loader loading={this.state.loaderVisible} />
 					<Card topbar={{ color: Colors.Navy }} style={Styles.titleView} contentStyle={Styles.title_content}>
 						<Text large style={Styles.title}>
-							App Instructions
+							Using this app
 						</Text>
 						<Text medium style={Styles.subtitle}>
 							Using and getting the most out of the dying to talk app

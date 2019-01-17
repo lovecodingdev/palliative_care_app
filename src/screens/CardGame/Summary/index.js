@@ -422,7 +422,7 @@ export default class Summary extends Component {
 							<Text medium center color={Colors.Navy} style={Styles.saveTitle}>
 								Save a copy of my results
 							</Text>
-							<Text bold center style={{ marginVertical: 8 }}>
+							<Text center style={{ marginVertical: 8 }}>
 								Palliative Care Australia respects the privacy of all app users and will not make any
 								attempt to identify you.
 							</Text>

@@ -61,6 +61,7 @@ export default class intro extends Component {
           </Card>
           <Card style={Styles.descView}>
             <Image source={Images.cardgame} style={Styles.icon} />
+            <Text medium>UNDER CONSTRUCTION</Text>
             <Text style={Styles.intro}>{this.state.cardGame.description}</Text>
           </Card>
         </ScrollView>

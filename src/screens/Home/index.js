@@ -100,7 +100,7 @@ export default class Home extends Component {
 								<Image source={Images.icon_how_to} style={Styles.left_icon} />
 							</MediaQuery>
 							<ArrowText bold color={Colors.Navy} style={Styles.left_item_text}>
-								App instructions
+								Using this app
 							</ArrowText>
 						</Card>
 						<Card
