@@ -32,7 +32,7 @@ export default class Page extends Component {
 			<ImageBackground source={Images.bg_navigation} resizeMode="stretch" style={Styles.container}>
 				<ScrollView contentContainerStyle={Styles.scroll}>
 					<View style={Styles.titleView}>
-						<Text large style={Styles.title}>
+						<Text large center style={Styles.title}>
 							{this.state.pageContent.title}
 						</Text>
 					</View>
