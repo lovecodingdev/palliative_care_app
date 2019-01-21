@@ -15,91 +15,14 @@ import {
 
 import Styles from './styles';
 import Footer from '@footer'
-import {Colors, Images, FontSizes} from '@theme';
+import {Colors, Images, FontSizes, htmlStyles, htmlRenderers } from '@theme';
 import {Button, Card, Text} from '@components'
 import { getUserGuides, API_HTML_ROOT } from "@api";
-import HTMLView from 'react-native-htmlview';
 const { width,height } = Dimensions.get('window');
 import { responsiveWidth, responsiveHeight } from 'react-native-responsive-dimensions';
 import {SharedModal} from '../../modals';
-
-function renderNode(node, index, siblings, parent, defaultRenderer) {
-
-    if(Platform.OS === 'ios')
-    {
-        if (node.name == 'iframe') {
-            var atribute = node.attribs;
-            var iframeHtml = `<iframe width=\"${atribute.width}\" height=\"${atribute.height}\" src=\"${atribute.src}" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>`;
-            return (
-              <View key={index} style={{width: width/3.5, height: height/10.5}}>
-                <WebView source={{html: iframeHtml}} />
-              </View>
-            );
-          }
-
-        if (node.name == 'a') {
-            var atribute = node.attribs;
-            if(atribute.href.startsWith("https"))
-            {
-                var source = atribute.href;
-                var aHtml = `<a href=\"${source}\" >${node.children[0].data}</a>`;
-                return (
-                    <HTMLView
-                        value={aHtml}
-                    />
-                );
-            }
-            else
-            {
-                var source = API_HTML_ROOT + atribute.href;
-                var aHtml = `<a href=\"${source}\" >${node.children[0].data}</a>`;
-                return (
-                    <HTMLView
-                        value={aHtml}
-                    />
-                );
-            }
-
-        }
-    }
-    else
-    {
-        console.log(node);
-        if (node.name == 'div') {
-            var atribute = node.children[0].next.attribs;
-            var iframeHtml = `<iframe src=\"${atribute.src}" width=\"${width/1.7}\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>`;
-            return (
-              <View key={index} style={{height: height/4.3,}}>
-                <WebView
-                    source={{html: iframeHtml}}
-                    style={{backgroundColor: Colors.backgroundPrimary}}
-                    javaScriptEnabled={true}
-                    domStorageEnabled={true}/>
-              </View>
-            );
-        }
-        if (node.name == 'p') {
-             if(node.children[0] != 'undefine')
-             {
-                // if(node.children[0].type == 'tag')
-                // {
-                //     alert(node.children[0].name)
-                // }
-                console.log(".......",node.children[0]);
-             }
-        }
-    }
-    if (node.name == 'img') {
-        var atribute = node.attribs;
-        var source = API_HTML_ROOT + atribute.src;
-        var imgHtml = `<img src=\"${source}\" width=\"${width/1.5}\" height=\"${height/2.7}\" >`;
-        return (
-            <HTMLView
-                value={imgHtml}
-            />
-        );
-    }
-}
+import HTML from 'react-native-render-html';
+import { fixSpaceInHTML } from '@utils';
 
 export default class UserGuidesDetail extends Component {
     constructor(props) {
@@ -198,9 +121,14 @@ export default class UserGuidesDetail extends Component {
 
                       <Card style={Styles.item} contentStyle={Styles.item_content}>
                         <View style={Styles.viewBody}>
-                            <HTMLView
-                                value={this.state.body}
-                                renderNode={renderNode}
+                            <HTML 
+                                html={fixSpaceInHTML(this.state.body)} 
+                                tagsStyles={htmlStyles} 
+                                onLinkPress={(e, url) => {
+                                    Linking.openURL(url).catch((err) =>
+                                        console.error('An error occurred', err) 
+                                    )
+                                }}
                             />
                         </View>
 

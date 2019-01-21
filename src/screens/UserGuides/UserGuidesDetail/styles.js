@@ -16,7 +16,7 @@ import { deviceWidth, deviceHeight, windowHeight, windowWidth } from "@Responsiv
 export default MediaQueryStyleSheet.create({
 
     container: {
-       flex: 1, 
+        flex: 1, 
         backgroundColor: Colors.backgroundPrimary,
     },
     scroll:{
@@ -41,7 +41,8 @@ export default MediaQueryStyleSheet.create({
         width:width/1.5
     },
     viewBody:{
-        marginHorizontal : width/9,
+        paddingHorizontal:deviceWidth(4),
+        paddingVertical:deviceWidth(2),
         alignItems: 'center'
     },
     faqItem: {
