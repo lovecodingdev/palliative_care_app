@@ -148,11 +148,6 @@ export default class UserGuidesList extends Component {
 								<Text smallmedium bold style={[ Styles.cardtitle, { color: Colors.Red } ]}>
 									{item.title}{' '}
 								</Text>
-								<Image
-									source={Images.icon_left_arrow}
-									resizeMode="contain"
-									style={{ tintColor: Colors.Red }}
-								/>
 							</View>
 						</MediaQuery>
 						<MediaQuery maxDeviceWidth={767}>
@@ -160,11 +155,6 @@ export default class UserGuidesList extends Component {
 								<Text smallmedium bold style={[ Styles.cardtitle, { color: Colors.Red } ]}>
 									{item.title}{' '}
 								</Text>
-								<Image
-									source={Images.icon_left_arrow}
-									resizeMode="contain"
-									style={{ tintColor: Colors.Red }}
-								/>
 							</View>
 						</MediaQuery>
 					</Card>
@@ -185,11 +175,6 @@ export default class UserGuidesList extends Component {
 								<Text smallmedium bold style={[ Styles.cardtitle, { color: Colors.Red } ]}>
 									{item.title}{' '}
 								</Text>
-								<Image
-									source={Images.icon_left_arrow}
-									resizeMode="contain"
-									style={{ tintColor: Colors.Red }}
-								/>
 							</View>
 						</MediaQuery>
 						<MediaQuery maxDeviceWidth={767}>
@@ -197,11 +182,6 @@ export default class UserGuidesList extends Component {
 								<Text smallmedium bold style={[ Styles.cardtitle, { color: Colors.Red } ]}>
 									{item.title}{' '}
 								</Text>
-								<Image
-									source={Images.icon_left_arrow}
-									resizeMode="contain"
-									style={{ tintColor: Colors.Red }}
-								/>
 							</View>
 						</MediaQuery>
 					</Card>
@@ -234,7 +214,6 @@ export default class UserGuidesList extends Component {
 									<Text smallmedium bold style={[ Styles.cardtitle ]}>
 										{item.title}
 									</Text>
-									<Image source={Images.icon_left_arrow} resizeMode="contain" />
 								</View>
 							</View>
 						</MediaQuery>
@@ -248,7 +227,6 @@ export default class UserGuidesList extends Component {
 								<Text smallmedium bold style={Styles.cardtitle}>
 									{item.title}
 								</Text>
-								<Image source={Images.icon_left_arrow} resizeMode="contain" />
 							</View>
 						</MediaQuery>
 					</Card>

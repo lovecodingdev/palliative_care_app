@@ -49,9 +49,9 @@ export default class Home extends Component {
 							<MediaQuery minDeviceWidth={768}>
 								<Image source={Images.discussion_starter} style={Styles.right_icon} />
 							</MediaQuery>
-							<ArrowText medium bold color={Colors.Red} style={Styles.right_item_text}>
+							<Text medium bold color={Colors.Red} style={Styles.right_item_text}>
 								Use discussion starter
-							</ArrowText>
+							</Text>
 						</Card>
 						<Card
 							topbar={{ color: Colors.Red }}
@@ -85,9 +85,9 @@ export default class Home extends Component {
 							<MediaQuery minDeviceWidth={768}>
 								<Image source={Images.looking_after} style={Styles.left_icon} />
 							</MediaQuery>
-							<ArrowText bold color={Colors.Navy} style={Styles.left_item_text}>
+							<Text bold color={Colors.Navy} style={Styles.left_item_text}>
 								Looking after yourself
-							</ArrowText>
+							</Text>
 						</Card>
 						<Card
 							topbar={{ color: Colors.Navy }}
@@ -99,9 +99,9 @@ export default class Home extends Component {
 							<MediaQuery minDeviceWidth={768}>
 								<Image source={Images.icon_how_to} style={Styles.left_icon} />
 							</MediaQuery>
-							<ArrowText bold color={Colors.Navy} style={Styles.left_item_text}>
+							<Text bold color={Colors.Navy} style={Styles.left_item_text}>
 								Using this app
-							</ArrowText>
+							</Text>
 						</Card>
 						<Card
 							topbar={{ color: Colors.Navy }}
@@ -113,9 +113,9 @@ export default class Home extends Component {
 							<MediaQuery minDeviceWidth={768}>
 								<Image source={Images.more_info} style={Styles.left_icon} />
 							</MediaQuery>
-							<ArrowText bold color={Colors.Navy} style={Styles.left_item_text}>
+							<Text bold color={Colors.Navy} style={Styles.left_item_text}>
 								Resource library
-							</ArrowText>
+							</Text>
 						</Card>
 						<Card
 							topbar={{ color: Colors.Navy }}

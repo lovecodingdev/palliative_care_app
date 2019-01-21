@@ -31,75 +31,6 @@ export default class Resources extends Component {
     }
 
     async componentDidMount() {
-        // try
-        // {
-        //     let value = await AsyncStorage.getItem('lastRefereshTimeResource');
-
-        //     if (value != null){
-        //         // do something
-        //         var currrentTime = moment(new Date()).format("HH:mm:ss");
-        //         var startTime=moment(value, "HH:mm:ss");
-        //         var endTime=moment(currrentTime, "HH:mm:ss");
-        //         var duration = moment.duration(endTime.diff(startTime));
-        //         var difference = moment.utc(+duration).format('H');
-
-        //         if(difference >= updateTimeInterval)
-        //         {
-        //             this.setState({
-        //                 loaderVisible: true
-        //             })
-
-        //             await AsyncStorage.setItem('lastRefereshTimeResource', currrentTime);
-        //             const ds = await getResources()
-
-        //             var resourceIndexes = [];
-        //             for(var i = 0; i < ds.resources.length; i ++){
-        //                 resourceIndexes.push(ds.resources[i]);
-        //             }
-
-        //             this.setState({
-        //                 resourceIndexes: resourceIndexes,
-        //                 loaderVisible: false
-        //             })
-        //         }
-        //         else
-        //         {
-        //             const ds = await getResources(true)
-
-        //             var resourceIndexes = [];
-        //             for(var i = 0; i < ds.resources.length; i ++){
-        //                 resourceIndexes.push(ds.resources[i]);
-        //             }
-
-        //             this.setState({
-        //                 resourceIndexes: resourceIndexes,
-        //             })
-        //         }
-        //     }
-        //     else {
-        //         // do something else
-        //         this.setState({
-        //                 loaderVisible: true
-        //             })
-
-        //         var currrentTime = moment(new Date()).format("HH:mm:ss");
-        //         await AsyncStorage.setItem('lastRefereshTimeResource', currrentTime);
-        //         const ds = await getResources()
-
-        //         var resourceIndexes = [];
-        //         for(var i = 0; i < ds.resources.length; i ++){
-        //             resourceIndexes.push(ds.resources[i]);
-        //         }
-
-        //         this.setState({
-        //             resourceIndexes: resourceIndexes,
-        //             loaderVisible: false
-        //         })
-        //     }
-        // }
-        // catch (error) {
-        //     // Error retrieving data
-        // }
 
         var json = await getResources(true)
         if(!json){
@@ -123,10 +54,9 @@ export default class Resources extends Component {
         return (
 
                 <TouchableOpacity style={Styles.item} onPress={()=>{navigate("ResourceDetail", {resourceIndex: index})}}>
-                            <View style={Styles.cardView}>
-                                <Text smallmedium bold style={Styles.cardtitle}>{item.title}</Text>
-                                <Image source={Images.icon_left_arrow} resizeMode='contain' />
-                            </View>
+                    <View style={Styles.cardView}>
+                        <Text smallmedium bold style={Styles.cardtitle}>{item.title}</Text>
+                    </View>
                 </TouchableOpacity>
 
         )
