@@ -107,7 +107,7 @@ const Footer = (props) => {
 					style={{ flexDirection: 'row', alignItems: 'center', marginHorizontal: deviceWidth(1) }}
 					onPress={() => {
 						let routeName = 'Page';
-						let pageName = 'privacy_policy';
+						let pageName = 'privacy_collection';
 						const key = `${routeName} ${store.routesInStack.length}`;
 						store.activeRoute = routeName;
 						store.activePage = pageName;

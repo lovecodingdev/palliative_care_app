@@ -25,6 +25,7 @@ const API_USER_GUIDE = API_ROOT + "/user-guides/";
 const API_GET_HELP = API_ROOT + "/get-help/";
 const API_LOOKING_AFTER_YOURSELF = API_ROOT + "/looking-after-yourself/";
 const API_PRIVACY_POLICY = API_ROOT + "/privacy-policy/";
+const API_PRIVACY_COLLECTION = API_ROOT + "/privacy-collection/";
 const API_ABOUT_THIS_APP = API_ROOT + "/about-this-app/";
 const API_SPEECH_CONSTANTS = API_ROOT + "/speech-constants/";
 
@@ -37,6 +38,7 @@ export const ApiDefinitions = {
   user_guides: API_USER_GUIDE,
   looking_after_yourself: API_LOOKING_AFTER_YOURSELF,
   privacy_policy: API_PRIVACY_POLICY,
+  privacy_collection: API_PRIVACY_COLLECTION,
   about_this_app: API_ABOUT_THIS_APP,
   bundle: API_BUNDLE,
   speech_constants: API_SPEECH_CONSTANTS
@@ -83,7 +85,6 @@ export async function getJSONwithCache(key, bypassCache) {
     console.log("NetInfo disconnected");
     makeLiveCall = false;
   }
-
   if (makeLiveCall || bypassCache) {
     console.log("calling live");
     try {
@@ -158,8 +159,6 @@ export async function postJSONwithCache(url, json) {
   }
   await AsyncStorage.setItem(cachedPostsKey, JSON.stringify(newCachedPosts));
 }
-
-async function sendAnswers() {}
 
 export async function postDiscussionAnswers(discussionStarter) {
   var answers = [];
