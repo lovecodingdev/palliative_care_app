@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
@@ -11,21 +11,21 @@ import {
   Dimensions,
   WebView,
   ImageBackground
-} from "react-native";
+} from 'react-native';
 
-import Styles from "./styles";
-import Text from "@text";
-import Footer from "@footer";
-import Button from "@button";
-import { Colors, Images, FontSizes } from "@theme";
-import { Loader } from "@components";
+import Styles from './styles';
+import Text from '@text';
+import Footer from '@footer';
+import Button from '@button';
+import { Colors, Images, FontSizes } from '@theme';
+import { Loader } from '@components';
 
-const { width, height } = Dimensions.get("window");
+const { width, height } = Dimensions.get('window');
 import {
   responsiveWidth,
   responsiveHeight
-} from "react-native-responsive-dimensions";
-import { SharedModal } from "../../modals";
+} from 'react-native-responsive-dimensions';
+import { SharedModal } from '../../modals';
 
 export default class LookingAfterYourself extends Component {
   constructor(props) {
@@ -40,18 +40,18 @@ export default class LookingAfterYourself extends Component {
   componentDidMount() {}
 
   _showResult(result) {
-    if (result.action == "sharedAction") {
+    if (result.action == 'sharedAction') {
       this.setState({ modalVisible: true });
-      console.log("Your content has been share successfully.");
+      console.log('Your content has been share successfully.');
     } else {
-      console.log("You have cancelled sharing.");
+      console.log('You have cancelled sharing.');
     }
   }
 
   _share() {
     Share.share({
-      message: "Talking in the Bush",
-      url: "http://www.godeckyourself.com"
+      message: 'Talking in the Bush',
+      url: 'http://palliativecare.org.au'
     }).then(this._showResult.bind(this));
   }
 
@@ -65,9 +65,8 @@ export default class LookingAfterYourself extends Component {
     return (
       <ImageBackground
         source={Images.bg_get_help}
-        resizeMode="stretch"
-        style={Styles.container}
-      >
+        resizeMode='stretch'
+        style={Styles.container}>
         <ScrollView contentContainerStyle={Styles.scroll}>
           <View style={Styles.titleView}>
             <Text large style={Styles.title}>
@@ -78,7 +77,7 @@ export default class LookingAfterYourself extends Component {
           <View style={[Styles.itemView]}>
             <Image
               style={[Styles.middleimage]}
-              resizeMode="contain"
+              resizeMode='contain'
               source={Images.looking_after}
             />
             <Text smallMedium style={Styles.subtitle}>
@@ -115,27 +114,27 @@ export default class LookingAfterYourself extends Component {
             </Text>
 
             <Text smallMedium style={Styles.subtitle}>
-              {"\u25CF"} Speak with their own General Practitioner about what
+              {'\u25CF'} Speak with their own General Practitioner about what
               support may be available.
             </Text>
             <Text smallMedium style={Styles.subtitle}>
-              {"\u25CF"} Contact the CRANAplus’ Bush Support Service for
+              {'\u25CF'} Contact the CRANAplus’ Bush Support Service for
               24-hour/7-day phone counselling for rural and remote health
               practitioners on 1800 805 391.
             </Text>
             <Text smallMedium style={Styles.subtitle}>
-              {"\u25CF"} Contact the Doctors Health Advisory Service in your
+              {'\u25CF'} Contact the Doctors Health Advisory Service in your
               state or territory 24-hours/7-days – refer to the website for
               contact details http://www.adhn.org.au/
             </Text>
             <Text smallMedium style={Styles.subtitle}>
-              {"\u25CF"} Contact the RACGP GP Support Program (for RACGP
+              {'\u25CF'} Contact the RACGP GP Support Program (for RACGP
               members) by calling 1300 361 008 (Office hours are 8.30 am to 6.00
               pm Monday to Friday) or 1300 361 008 (24 hours/7 days) for crisis
               counselling.
             </Text>
             <Text smallMedium style={Styles.subtitle}>
-              {"\u25CF"} Access the RACGP GP Self-care resource available at
+              {'\u25CF'} Access the RACGP GP Self-care resource available at
               https://www.racgp.org.au/download/Documents/e-health/Self-care-and-mental-health-resources-for-general-practitioners.PDF
             </Text>
           </View>
@@ -144,8 +143,7 @@ export default class LookingAfterYourself extends Component {
           <Button
             bold
             light
-            onPress={() => this.props.navigation.navigate("Home")}
-          >
+            onPress={() => this.props.navigation.navigate('Home')}>
             Go back
           </Button>
           <Button bold dark onPress={this._share}>
