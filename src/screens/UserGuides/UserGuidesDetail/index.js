@@ -27,6 +27,7 @@ import { SharedModal } from '../../modals';
 import HTML from 'react-native-render-html';
 import { exportHelpPdf } from '@helppdf';
 import { fixSpaceInHTML } from '@utils';
+import { CDSingleView } from '../../CardGame/index';
 
 export default class UserGuidesDetail extends Component {
   constructor(props) {
@@ -171,7 +172,6 @@ export default class UserGuidesDetail extends Component {
           <Button bold light onPress={this.exportPage}>
             Export
           </Button>
-          {/* <Button dark  bold onPress={this._share} >Share</Button> */}
         </View>
         <SharedModal
           visible={this.state.modalVisible}
